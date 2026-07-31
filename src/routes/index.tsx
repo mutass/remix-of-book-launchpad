@@ -135,8 +135,8 @@ function Landing() {
               <span className="text-accent">steady progress</span> through prayer.
             </h1>
             <p className="mt-3 text-muted-foreground">
-              The Wealth Blueprint is the complete field guide Fred Brian Kisubi uses with clients
-              — income systems, pricing, selling and money habits in one book.
+              Seven Dimensions of Prayer by Apostle Fred Brian Kisubi shows you how to yield to the
+              Holy Spirit, engage effectively, follow through and break every impasse in prayer.
             </p>
 
             <div className="mt-6 flex flex-wrap items-end gap-3">
