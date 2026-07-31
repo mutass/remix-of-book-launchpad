@@ -221,14 +221,14 @@ function Landing() {
             Real titles from Apostle Fred's Kindle library — over 70 books written for the glory
             of God.
           </p>
-          <div className="mt-8 grid gap-6 sm:grid-cols-3">
+          <div className="mt-8 grid grid-cols-3 gap-3 sm:gap-6">
             {samples.map((b) => (
               <a
                 key={b.title}
                 href={b.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group rounded-xl border border-border bg-card p-4 shadow-[var(--shadow-card)] transition-transform hover:-translate-y-1"
+                className="group rounded-xl border border-border bg-card p-2 shadow-[var(--shadow-card)] transition-transform hover:-translate-y-1 sm:p-4"
               >
                 <img
                   src={b.cover}
@@ -238,12 +238,12 @@ function Landing() {
                   height={1200}
                   className="w-full rounded-md"
                 />
-                <h3 className="mt-4 font-bold text-foreground group-hover:text-accent">
+                <h3 className="mt-2 text-xs font-bold text-foreground group-hover:text-accent sm:mt-4 sm:text-base">
                   {b.title}
                 </h3>
-                <p className="mt-1 text-sm text-muted-foreground">{b.blurb}</p>
-                <span className="mt-3 inline-block text-xs font-bold uppercase tracking-widest text-accent">
-                  View on Amazon →
+                <p className="mt-1 hidden text-sm text-muted-foreground sm:block">{b.blurb}</p>
+                <span className="mt-2 inline-block text-[10px] font-bold uppercase tracking-widest text-accent sm:mt-3 sm:text-xs">
+                  View →
                 </span>
               </a>
             ))}
