@@ -4,12 +4,12 @@ import book1 from "@/assets/book-1.jpg";
 import book2 from "@/assets/book-2.jpg";
 import book3 from "@/assets/book-3.jpg";
 import { CountdownTimer } from "@/components/CountdownTimer";
-import { AMAZON_MAIN_BOOK_URL, LeadCaptureForm } from "@/components/LeadCaptureForm";
+import { AMAZON_AUTHOR_URL, AMAZON_MAIN_BOOK_URL, LeadCaptureForm } from "@/components/LeadCaptureForm";
 import { Button } from "@/components/ui/button";
 
-const TITLE = "The Wealth Blueprint by Fred Brian Kisubui — 68% Off Today";
+const TITLE = "Seven Dimensions of Prayer by Fred Brian Kisubi — $5.99 on Kindle";
 const DESCRIPTION =
-  "Get The Wealth Blueprint by Fred Brian Kisubui for $7.99 instead of $24.99. Limited-time offer — enter your email and phone for instant access plus the Amazon link.";
+  "Get Seven Dimensions of Prayer by Apostle Fred Brian Kisubi for $5.99 on Amazon Kindle. Enter your email and phone for the direct Amazon link and more titles from the author.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -28,48 +28,75 @@ export const Route = createFileRoute("/")({
 const samples = [
   {
     cover: book1,
-    title: "Side Hustle Starter",
-    blurb: "10 businesses you can start this week with almost no capital.",
-    url: "https://www.amazon.com/s?k=Fred+Brian+Kisubui+Side+Hustle+Starter&i=digital-text",
+    title: "Intimacy with the Holy Spirit",
+    blurb: "Experiencing the supernatural through a daily walk in His presence.",
+    url: "https://www.amazon.com/INTIMACY-HOLY-SPIRIT-Experiencing-Supernatural-ebook/dp/B08J444HXN",
   },
   {
     cover: book2,
-    title: "Money Mindset",
-    blurb: "Rewire the beliefs that quietly keep your bank balance flat.",
-    url: "https://www.amazon.com/s?k=Fred+Brian+Kisubui+Money+Mindset&i=digital-text",
+    title: "The Power Dimension",
+    blurb: "Unlocking spiritual power for a life of impact and authority.",
+    url: "https://www.amazon.com/POWER-DIMENSION-Unlocking-Spiritual-Power-ebook/dp/B08JCVKFDY",
   },
   {
     cover: book3,
-    title: "Sell Without Fear",
-    blurb: "A calm, simple framework for closing deals without pressure.",
-    url: "https://www.amazon.com/s?k=Fred+Brian+Kisubui+Sell+Without+Fear&i=digital-text",
+    title: "Mechanism of Faith",
+    blurb: "The master keys to a productive, fruitful Christian life.",
+    url: "https://www.amazon.com/MECHANISM-FAITH-Master-Productive-Christianity-ebook/dp/B08BP44BBN",
+  },
+];
+
+const moreTitles = [
+  {
+    title: "The Purpose and Benefits of Prayer",
+    url: "https://www.amazon.com/PURPOSE-BENEFITS-PRAYER-Tapping-Power-ebook/dp/B08DH25442",
+  },
+  {
+    title: "Enjoying the Spirit Filled Life",
+    url: "https://www.amazon.com/ENJOYING-SPIRIT-FILLED-BRIAN-KISUBI-ebook/dp/B08BNZRD2Q",
+  },
+  {
+    title: "Breaking the Power of the Flesh",
+    url: "https://www.amazon.com/BREAKING-POWER-FLESH-Limiting-Limitation-ebook/dp/B08BCPB4MJ",
+  },
+  {
+    title: "Empowered by Grace",
+    url: "https://www.amazon.com/EMPOWERED-GRACE-Connecting-supernatural-enablement-ebook/dp/B08J3Z1WPN",
+  },
+  {
+    title: "Apostolic Impartation",
+    url: "https://www.amazon.com/APOSTOLIC-IMPARTATION-Spiritual-Establishment-empowerment-ebook/dp/B0H3CQ3LKB",
+  },
+  {
+    title: "Understanding the Five-Fold Ministry",
+    url: "https://www.amazon.com/Understanding-Five-Fold-Ministry-Unlocking-Structure-ebook/dp/B0GSJPFLRM",
   },
 ];
 
 const chapters = [
   {
-    title: "Build your first income system",
-    body: "A step-by-step path from idea to first paying customer in 30 days.",
+    title: "Yielding to the Holy Spirit",
+    body: "How to pray from a place of surrender and let the Spirit lead your words.",
   },
   {
-    title: "Price like a professional",
-    body: "Stop undercharging. Learn the pricing math that protects your margin.",
+    title: "Engaging effectively in prayer",
+    body: "Practical patterns that move prayer from routine to real achievement.",
   },
   {
-    title: "Find buyers, not browsers",
-    body: "Simple outreach scripts that turn cold contacts into warm leads.",
+    title: "Following through in prayer",
+    body: "How to stay with a matter until heaven's assistance shows up.",
   },
   {
-    title: "Manage the money coming in",
-    body: "Cashflow, savings buckets and reinvestment made painfully simple.",
+    title: "Breaking impasses",
+    body: "What to do when prayer feels blocked and progress has stalled.",
   },
   {
-    title: "Scale without burning out",
-    body: "Systems, delegation and the tasks you should never do yourself.",
+    title: "Heavenly legislation",
+    body: "Understanding prayer as divine communion and legislation in the unseen realm.",
   },
   {
-    title: "Stay consistent for 12 months",
-    body: "The weekly review ritual that keeps momentum alive after month one.",
+    title: "Unlocking kingdom treasures",
+    body: "Steady progress in destiny through consistent, informed prayer.",
   },
 ];
 
@@ -79,10 +106,10 @@ function Landing() {
       <header className="border-b border-border bg-card/80 backdrop-blur">
         <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:flex sm:justify-between">
           <span className="truncate text-sm font-black uppercase tracking-[0.2em] text-foreground">
-            Fred Brian Kisubui
+            Fred Brian Kisubi
           </span>
           <Button asChild variant="deal" size="sm" className="shrink-0">
-            <a href="#claim">Get 68% off</a>
+            <a href="#claim">Get the book</a>
           </Button>
         </div>
       </header>
@@ -93,28 +120,28 @@ function Landing() {
           <div className="mx-auto w-56 sm:w-72">
             <img
               src={mainBook}
-              alt="The Wealth Blueprint book cover by Fred Brian Kisubui"
+              alt="Seven Dimensions of Prayer book cover by Fred Brian Kisubi"
               width={800}
-              height={1104}
+              height={1200}
               className="w-full rounded-lg shadow-[var(--shadow-book)]"
             />
           </div>
           <div>
             <span className="inline-block rounded-full bg-deal/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-deal">
-              Limited launch offer
+              Kindle edition — out now
             </span>
             <h1 className="mt-4 text-3xl font-black leading-tight text-foreground sm:text-4xl">
-              200 practical moves to help you build{" "}
-              <span className="text-accent">real wealth</span> from zero.
+              Unlock kingdom treasures and{" "}
+              <span className="text-accent">steady progress</span> through prayer.
             </h1>
             <p className="mt-3 text-muted-foreground">
-              The Wealth Blueprint is the complete field guide Fred Brian Kisubui uses with clients
+              The Wealth Blueprint is the complete field guide Fred Brian Kisubi uses with clients
               — income systems, pricing, selling and money habits in one book.
             </p>
 
             <div className="mt-6 flex flex-wrap items-end gap-3">
               <span className="relative text-2xl font-bold text-muted-foreground">
-                <span className="line-through decoration-deal decoration-[3px]">$24.99</span>
+                <span className="line-through decoration-deal decoration-[3px]">$14.99</span>
                 <span
                   aria-hidden="true"
                   className="absolute -right-5 -top-1 text-3xl font-black text-deal"
@@ -122,8 +149,8 @@ function Landing() {
                   ✕
                 </span>
               </span>
-              <span className="ml-4 text-5xl font-black text-foreground">$7.99</span>
-              <span className="pb-1 text-sm font-semibold text-deal">You save $17.00</span>
+              <span className="ml-4 text-5xl font-black text-foreground">$5.99</span>
+              <span className="pb-1 text-sm font-semibold text-deal">You save $9.00</span>
             </div>
 
             <div className="mt-6">
@@ -155,10 +182,10 @@ function Landing() {
           </div>
           <div className="min-w-0">
             <p className="text-sm font-semibold sm:text-base">
-              “This is by far one of the most practical books on building income I have read. Highly
-              recommended.”
+              “Apostle Fred writes with clarity and fire. This book changed how our whole church
+              approaches prayer.”
             </p>
-            <p className="mt-1 text-xs opacity-75">— Daniel O., verified Amazon reader ★★★★★</p>
+            <p className="mt-1 text-xs opacity-75">— Daniel O., Kindle reader ★★★★★</p>
           </div>
         </div>
       </section>
@@ -169,7 +196,7 @@ function Landing() {
           What&apos;s included in this book
         </h2>
         <p className="mx-auto mt-2 max-w-xl text-center text-sm text-muted-foreground">
-          Everything you need to go from idea to a steady income. Take a look at what is inside.
+          A clear path from praying words to praying with understanding. Here is what is inside.
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {chapters.map((c) => (
@@ -188,10 +215,11 @@ function Landing() {
       <section className="bg-secondary/50 py-14">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-center text-2xl font-black text-foreground">
-            More books by Fred Brian Kisubui
+            More books by Fred Brian Kisubi
           </h2>
           <p className="mx-auto mt-2 max-w-xl text-center text-sm text-muted-foreground">
-            Sample titles from the same library — all available on Amazon Kindle.
+            Real titles from Apostle Fred's Kindle library — over 70 books written for the glory
+            of God.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             {samples.map((b) => (
@@ -207,7 +235,7 @@ function Landing() {
                   alt={`${b.title} book cover`}
                   loading="lazy"
                   width={800}
-                  height={1104}
+                  height={1200}
                   className="w-full rounded-md"
                 />
                 <h3 className="mt-4 font-bold text-foreground group-hover:text-accent">
@@ -220,6 +248,34 @@ function Landing() {
               </a>
             ))}
           </div>
+
+          <div className="mt-10 rounded-xl border border-border bg-card p-6 shadow-[var(--shadow-card)]">
+            <h3 className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
+              Also on Amazon Kindle
+            </h3>
+            <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+              {moreTitles.map((t) => (
+                <li key={t.title}>
+                  <a
+                    href={t.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-semibold text-foreground underline-offset-4 hover:text-accent hover:underline"
+                  >
+                    {t.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a
+              href={AMAZON_AUTHOR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-block text-xs font-bold uppercase tracking-widest text-accent"
+            >
+              See all books by Fred Brian Kisubi →
+            </a>
+          </div>
         </div>
       </section>
 
@@ -228,7 +284,7 @@ function Landing() {
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 md:grid-cols-2">
           <div>
             <h2 className="text-3xl font-black leading-tight">
-              Grab your copy today and start building the income you actually want.
+              Get your copy today and step into a deeper dimension of prayer.
             </h2>
             <p className="mt-3 text-sm opacity-80">
               Enter your email and phone number and we will send your instant download plus a direct
@@ -236,12 +292,12 @@ function Landing() {
             </p>
             <div className="mt-6 flex flex-wrap items-end gap-3">
               <span className="relative text-xl font-bold opacity-70">
-                <span className="line-through decoration-deal decoration-[3px]">$24.99</span>
+                <span className="line-through decoration-deal decoration-[3px]">$14.99</span>
                 <span aria-hidden="true" className="absolute -right-5 -top-1 text-2xl font-black text-deal">
                   ✕
                 </span>
               </span>
-              <span className="ml-4 text-4xl font-black">$7.99</span>
+              <span className="ml-4 text-4xl font-black">$5.99</span>
             </div>
             <div className="mt-6">
               <CountdownTimer />
@@ -253,7 +309,7 @@ function Landing() {
 
       <footer className="bg-ink text-ink-foreground">
         <div className="mx-auto max-w-6xl px-4 py-8 text-xs opacity-70">
-          © {new Date().getFullYear()} Fred Brian Kisubui. All rights reserved. Amazon and Kindle
+          © {new Date().getFullYear()} Fred Brian Kisubi. All rights reserved. Amazon and Kindle
           are trademarks of Amazon.com, Inc.
         </div>
       </footer>
