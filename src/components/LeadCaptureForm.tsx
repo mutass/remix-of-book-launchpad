@@ -5,7 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export const AMAZON_MAIN_BOOK_URL =
-  "https://www.amazon.com/s?k=Fred+Brian+Kisubui+The+Wealth+Blueprint&i=digital-text";
+  "https://www.amazon.com/SEVEN-DIMENSIONS-PRAYER-Unlocking-Treasures-ebook/dp/B08BG2YNVW";
+
+export const AMAZON_AUTHOR_URL =
+  "https://www.amazon.com/s?i=digital-text&k=FRED+BRIAN+KISUBI";
 
 const leadSchema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(80, "Name is too long"),
@@ -56,7 +59,7 @@ export function LeadCaptureForm({ id }: { id?: string }) {
           Congratulations, {values.name.split(" ")[0]}!
         </h3>
         <p className="mt-2 text-sm text-muted-foreground">
-          Your discount is locked in. You will receive an email at{" "}
+          Your request is confirmed. You will receive an email at{" "}
           <span className="font-semibold text-foreground">{values.email}</span> with your download
           link, and we may text your copy code to {values.phone}.
         </p>
@@ -79,7 +82,7 @@ export function LeadCaptureForm({ id }: { id?: string }) {
       noValidate
       className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)] sm:p-8"
     >
-      <h3 className="text-xl font-black text-foreground">Claim the 68% discount</h3>
+      <h3 className="text-xl font-black text-foreground">Get your copy today</h3>
       <p className="mt-1 text-sm text-muted-foreground">
         Enter your details and we will email your instant-access link.
       </p>
@@ -126,7 +129,7 @@ export function LeadCaptureForm({ id }: { id?: string }) {
       </div>
 
       <Button type="submit" variant="deal" size="lg" className="mt-6 w-full">
-        Send me the book — $7.99
+        Send me the book — $5.99
       </Button>
       <p className="mt-3 text-center text-xs text-muted-foreground">
         No spam. Unsubscribe any time. Instant PDF + Amazon Kindle link.
