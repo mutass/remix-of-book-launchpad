@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { z } from "zod";
+import { toast } from "sonner";
+import { useServerFn } from "@tanstack/react-start";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { submitLead } from "@/lib/leads.functions";
 
 export const AMAZON_MAIN_BOOK_URL =
   "https://www.amazon.com/SEVEN-DIMENSIONS-PRAYER-Unlocking-Treasures-ebook/dp/B08BG2YNVW";
@@ -27,11 +30,13 @@ export function LeadCaptureForm({ id }: { id?: string }) {
   const [values, setValues] = useState({ name: "", email: "", phone: "" });
   const [errors, setErrors] = useState<Errors>({});
   const [done, setDone] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const submit = useServerFn(submitLead);
 
   const set = (key: keyof typeof values) => (e: React.ChangeEvent<HTMLInputElement>) =>
     setValues((v) => ({ ...v, [key]: e.target.value }));
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const parsed = leadSchema.safeParse(values);
     if (!parsed.success) {
@@ -43,7 +48,19 @@ export function LeadCaptureForm({ id }: { id?: string }) {
       return;
     }
     setErrors({});
-    setDone(true);
+    setSubmitting(true);
+    try {
+      await submit({ data: { ...parsed.data, bookTitle: "Seven Dimensions of Prayer", source: "landing-page" } });
+      setDone(true);
+      toast.success("Your request is confirmed!", {
+        description: `Check your email (${parsed.data.email}) for your download link.`,
+      });
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Something went wrong. Please try again.";
+      toast.error("Could not submit your request", { description: message });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (done) {
@@ -128,8 +145,8 @@ export function LeadCaptureForm({ id }: { id?: string }) {
         </div>
       </div>
 
-      <Button type="submit" variant="deal" size="lg" className="mt-6 w-full">
-        Send me the book — $5.99
+      <Button type="submit" variant="deal" size="lg" className="mt-6 w-full" disabled={submitting}>
+        {submitting ? "Submitting..." : "Send me the book — $5.99"}
       </Button>
       <p className="mt-3 text-center text-xs text-muted-foreground">
         No spam. Unsubscribe any time. Instant PDF + Amazon Kindle link.
