@@ -139,28 +139,23 @@ function Landing() {
               Holy Spirit, engage effectively, follow through and break every impasse in prayer.
             </p>
 
-            <div className="mt-5 flex flex-col gap-2 sm:mt-7 sm:flex-row sm:flex-wrap sm:gap-3">
-              <Button asChild variant="deal" size="xl" className="w-full text-base sm:w-auto">
+            <div className="mt-5 flex flex-col gap-3 sm:mt-7">
+              <Button asChild variant="deal" size="xl" className="w-full text-lg sm:w-auto">
                 <a href={AMAZON_MAIN_BOOK_URL} target="_blank" rel="noopener noreferrer">
                   Buy now on Amazon
                 </a>
               </Button>
-              <Button asChild variant="outline" size="sm" className="sm:size-lg">
-                <a href={AMAZON_MAIN_BOOK_URL} target="_blank" rel="noopener noreferrer">
-                  View on Amazon
-                </a>
-              </Button>
             </div>
 
-            <div className="mt-4 flex flex-wrap items-end gap-2 sm:mt-6 sm:gap-3">
-              <span className="text-sm font-bold text-muted-foreground">
-                <span className="line-through decoration-deal decoration-[3px]">$24.99</span>
+            <div className="mt-4 flex flex-wrap items-center gap-2 sm:mt-6 sm:gap-3">
+              <span className="text-base font-bold text-muted-foreground line-through sm:text-lg">
+                $24.99
               </span>
-              <span className="text-sm font-bold text-muted-foreground">
-                <span className="line-through decoration-deal decoration-[3px]">$14.99</span>
+              <span className="text-base font-bold text-muted-foreground line-through sm:text-lg">
+                $14.99
               </span>
-              <span className="ml-1 text-xl font-black text-foreground sm:text-2xl">$5.99</span>
-              <span className="pb-0.5 text-[10px] font-semibold text-deal sm:pb-1 sm:text-sm">You save $19.00</span>
+              <span className="text-3xl font-black text-deal sm:text-4xl">$5.99</span>
+              <span className="text-sm font-bold text-deal sm:text-base">You save $19.00</span>
             </div>
 
             <div className="mt-4 sm:mt-6">
