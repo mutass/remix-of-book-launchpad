@@ -140,16 +140,10 @@ function Landing() {
             </p>
 
             <div className="mt-4 flex flex-wrap items-end gap-2 sm:mt-6 sm:gap-3">
-              <span className="relative text-base font-bold text-muted-foreground sm:text-2xl">
+              <span className="text-sm font-bold text-muted-foreground">
                 <span className="line-through decoration-deal decoration-[3px]">$14.99</span>
-                <span
-                  aria-hidden="true"
-                  className="absolute -right-3 -top-1 text-lg font-black text-deal sm:-right-5 sm:text-3xl"
-                >
-                  ✕
-                </span>
               </span>
-              <span className="ml-3 text-2xl font-black text-foreground sm:ml-4 sm:text-5xl">$5.99</span>
+              <span className="ml-1 text-xl font-black text-foreground sm:text-2xl">$5.99</span>
               <span className="pb-0.5 text-[10px] font-semibold text-deal sm:pb-1 sm:text-sm">You save $9.00</span>
             </div>
 
@@ -161,10 +155,10 @@ function Landing() {
             </div>
 
             <div className="mt-5 flex flex-col gap-2 sm:mt-7 sm:flex-row sm:flex-wrap sm:gap-3">
-              <Button asChild variant="deal" size="sm" className="sm:size-xl">
-                <a href="#claim">Claim my copy now</a>
+              <Button asChild variant="deal" size="xl" className="w-full text-base sm:w-auto">
+                <a href="#claim">Buy now on Amazon</a>
               </Button>
-              <Button asChild variant="outline" size="sm" className="sm:size-xl">
+              <Button asChild variant="outline" size="sm" className="sm:size-lg">
                 <a href={AMAZON_MAIN_BOOK_URL} target="_blank" rel="noopener noreferrer">
                   View on Amazon
                 </a>
