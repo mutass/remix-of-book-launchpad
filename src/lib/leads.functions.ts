@@ -15,7 +15,7 @@ const leadSubmissionSchema = z.object({
 });
 
 export const submitLead = createServerFn({ method: "POST" })
-  .inputValidator((data) => leadSubmissionSchema.parse(data))
+  .validator((data) => leadSubmissionSchema.parse(data))
   .handler(async ({ data }) => {
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
