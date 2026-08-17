@@ -78,16 +78,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Book Launchpad creates dynamic book sales landing pages with email capture and countdown timers." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Book Launchpad creates dynamic book sales landing pages with email capture and countdown timers." },
+      { title: "Fred Brian Kisubi — Books & Teachings" },
+      { name: "description", content: "Discover books and teachings by Apostle Fred Brian Kisubi, including Seven Dimensions of Prayer." },
+      { name: "author", content: "Fred Brian Kisubi" },
+      { property: "og:title", content: "Fred Brian Kisubi — Books & Teachings" },
+      { property: "og:description", content: "Discover books and teachings by Apostle Fred Brian Kisubi, including Seven Dimensions of Prayer." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Book Launchpad creates dynamic book sales landing pages with email capture and countdown timers." },
+      { name: "twitter:title", content: "Fred Brian Kisubi — Books & Teachings" },
+      { name: "twitter:description", content: "Discover books and teachings by Apostle Fred Brian Kisubi, including Seven Dimensions of Prayer." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/86d18eae-46dd-4776-b2ec-0864dfff71b5/id-preview-4820fa34--b9676573-67d5-4621-97f0-bbcca0878025.lovable.app-1785509212176.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/86d18eae-46dd-4776-b2ec-0864dfff71b5/id-preview-4820fa34--b9676573-67d5-4621-97f0-bbcca0878025.lovable.app-1785509212176.png" },
     ],
@@ -113,6 +112,7 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
+        <Toaster />
         <Scripts />
       </body>
     </html>
