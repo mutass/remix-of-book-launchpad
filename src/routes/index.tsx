@@ -295,14 +295,23 @@ function Landing() {
               Enter your email and phone number and we will send your instant download plus a direct
               link to the book on Amazon.
             </p>
-            <div className="mt-6 flex flex-wrap items-end gap-3">
-              <span className="relative text-xl font-bold opacity-70">
-                <span className="line-through decoration-deal decoration-[3px]">$14.99</span>
-                <span aria-hidden="true" className="absolute -right-5 -top-1 text-2xl font-black text-deal">
-                  ✕
+            <div className="mt-6 flex flex-wrap items-end justify-between gap-4">
+              <div className="flex flex-wrap items-baseline gap-2 sm:gap-3">
+                <span className="text-4xl font-black">$5.99</span>
+                <span className="text-lg font-bold opacity-70 line-through decoration-deal decoration-[3px]">$24.99</span>
+                <span className="inline-block rounded-sm bg-deal px-2 py-1 text-sm font-black text-deal-foreground">
+                  -76%
                 </span>
-              </span>
-              <span className="ml-4 text-4xl font-black">$5.99</span>
+              </div>
+              <div className="flex flex-col items-end gap-1 text-right">
+                <div className="flex items-center gap-1 text-sm font-bold">
+                  <span className="text-amber-400">★★★★★</span>
+                  <span>4.9</span>
+                </div>
+                <div className="text-xs opacity-90">
+                  <span className="font-bold">12.5k</span> downloads · <span className="font-bold">8.2k</span> likes
+                </div>
+              </div>
             </div>
             <div className="mt-6">
               <CountdownTimer />
