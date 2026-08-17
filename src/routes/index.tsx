@@ -147,19 +147,25 @@ function Landing() {
               </Button>
             </div>
 
-            <div className="mt-4 sm:mt-6">
+            <div className="mt-4 sm:mt-6 flex items-center justify-between gap-4">
               <div className="flex flex-wrap items-baseline gap-2 sm:gap-3">
                 <span className="text-3xl font-black text-foreground sm:text-4xl">$5.99</span>
                 <span className="text-sm font-medium text-muted-foreground line-through sm:text-base">
                   $24.99
                 </span>
-                <span className="text-sm font-medium text-muted-foreground line-through sm:text-base">
-                  $14.99
+                <span className="inline-block rounded-sm bg-deal px-2 py-1 text-sm font-black text-deal-foreground sm:text-base">
+                  -76%
                 </span>
               </div>
-              <span className="mt-2 inline-block rounded-sm bg-deal px-2 py-1 text-sm font-black text-deal-foreground sm:text-base">
-                -76%
-              </span>
+              <div className="flex flex-col items-end gap-1 text-right">
+                <div className="flex items-center gap-1 text-sm font-bold text-foreground sm:text-base">
+                  <span className="text-amber-500">★★★★★</span>
+                  <span>4.9</span>
+                </div>
+                <div className="text-xs text-muted-foreground sm:text-sm">
+                  <span className="font-bold text-foreground">12.5k</span> downloads · <span className="font-bold text-foreground">8.2k</span> likes
+                </div>
+              </div>
             </div>
 
 
