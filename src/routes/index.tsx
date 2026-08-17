@@ -147,16 +147,21 @@ function Landing() {
               </Button>
             </div>
 
-            <div className="mt-4 flex flex-wrap items-center gap-2 sm:mt-6 sm:gap-3">
-              <span className="text-base font-bold text-muted-foreground line-through sm:text-lg">
-                $24.99
+            <div className="mt-4 sm:mt-6">
+              <div className="flex flex-wrap items-baseline gap-2 sm:gap-3">
+                <span className="text-3xl font-black text-foreground sm:text-4xl">$5.99</span>
+                <span className="text-sm font-medium text-muted-foreground line-through sm:text-base">
+                  $24.99
+                </span>
+                <span className="text-sm font-medium text-muted-foreground line-through sm:text-base">
+                  $14.99
+                </span>
+              </div>
+              <span className="mt-2 inline-block rounded-sm bg-deal px-2 py-1 text-sm font-black text-deal-foreground sm:text-base">
+                -76%
               </span>
-              <span className="text-base font-bold text-muted-foreground line-through sm:text-lg">
-                $14.99
-              </span>
-              <span className="text-3xl font-black text-deal sm:text-4xl">$5.99</span>
-              <span className="text-sm font-bold text-deal sm:text-base">You save $19.00</span>
             </div>
+
 
             <div className="mt-4 sm:mt-6">
               <p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-muted-foreground sm:mb-2 sm:text-xs">
